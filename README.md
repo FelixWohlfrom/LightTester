@@ -7,3 +7,7 @@ via a web interface.
 Quite useful to try out different light moods before cutting a led stripe into parts.
 
 ![The light tester in use](assets/in_use.jpg)
+
+## License
+
+This software is licensed under MIT license. For details, see the [LICENSE](./LICENSE) file.
