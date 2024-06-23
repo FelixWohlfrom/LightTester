@@ -78,7 +78,7 @@ void send_index() {
     led_checkboxes = led_checkboxes + "<input type=\"checkbox\" class=\"light\" name=\"leds[]\" value=\"" + i + "\" " + checked + " onclick=\"all_selected()\"/>";
 
     if (i % 10 == 9) {
-      led_checkboxes = led_checkboxes + "<span class=\"divider\">|</span>";
+      led_checkboxes = led_checkboxes + "<span class=\"divider\">|</span></div><div class=\"nobreak\">";
     }
   }
 
@@ -91,6 +91,7 @@ void send_index() {
       "input { min-width: 20%; margin: 3px }\n"
       ".light, #all_lights { min-width: 0%; float: left }\n"
       ".divider { float: left; }\n"
+      ".nobreak { float: left; white-space: nowrap; }\n"
       "button { margin-top: 15px; }"
     "</style>"
     "<script>"
@@ -125,7 +126,7 @@ void send_index() {
       "<label for=\"num_leds\">LED Count:</label><input type=\"number\" id=\"num_leds\" name=\"num_leds\" min=\"0\" max=\"" + String(MAX_NUM_LEDS) + "\" value=\"" + String(num_leds) + "\" /><br />"
       "<div style=\"width: fit-content; margin: 3px auto\"><label class=\"divider\">Lights:</label>"
         "<input type=\"checkbox\" id=\"all_lights\" name=\"all_lights\" value=\"all\" onclick=\"select_all()\"><span class=\"divider\">All</span></input><span class=\"divider\">|</span>"
-        + led_checkboxes +
+        "<div class=\"nobreak\">" + led_checkboxes + "</div>"
       "</div><div style=\"clear: both\"></div>"
       "</form>"
       "<button type=\"submit\" form=\"settings\">UPDATE</button>"
